@@ -1,41 +1,45 @@
 # Tiny Tapeout project information
 project:
-  title:        ""      # Project title
-  author:       ""      # Your name
-  discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  title:        "Digital Lock"      # Project title
+  author:       "Francisco Hernandez"      # Your name
+  discord:      "frankyh"      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
+  description:  "A 4 button input digital lock with seven segment display."      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     2000000       # Clock frequency in Hz (or 0 if not applicable)
 
   # How many tiles your design occupies? A single tile is about 167x108 uM.
   tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_top"
   
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
   source_files:        
     - "project.v"
+    - "edgeDetector.v"
+    - "debouncer.v"
+    - "seven_segment_ctrl.v"
+    - "digital_lock.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 pinout:
   # Inputs
-  ui[0]: ""
-  ui[1]: ""
-  ui[2]: ""
-  ui[3]: ""
-  ui[4]: ""
-  ui[5]: ""
+  ui[0]: "button[0]"
+  ui[1]: "button[1]"
+  ui[2]: "button[2]"
+  ui[3]: "button[3]"
+  ui[4]: "clk"
+  ui[5]: "rstn"
   ui[6]: ""
   ui[7]: ""
 
   # Outputs
-  uo[0]: ""
-  uo[1]: ""
-  uo[2]: ""
-  uo[3]: ""
-  uo[4]: ""
-  uo[5]: ""
+  uo[0]: "led[0]"
+  uo[1]: "led[1]"
+  uo[2]: "led[2]"
+  uo[3]: "led[3]"
+  uo[4]: "ssd"
+  uo[5]: "dig"
   uo[6]: ""
   uo[7]: ""
 
