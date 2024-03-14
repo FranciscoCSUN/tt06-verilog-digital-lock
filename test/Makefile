@@ -5,7 +5,7 @@
 SIM ?= icarus
 TOPLEVEL_LANG ?= verilog
 SRC_DIR = $(PWD)/../src
-PROJECT_SOURCES += $(PWD)/../src/debouncer.v $(PWD)/../src/digital_lock.v $(PWD)/../src/edgeDetector.v $(PWD)/../src/seven_segment_ctrl.v
+PROJECT_SOURCES += $(SRC_DIR)/debouncer.v $(SRC_DIR)/digital_lock.v $(SRC_DIR)/edgeDetector.v $(SRC_DIR)/seven_segment_ctrl.v
 
 ifneq ($(GATES),yes)
 
