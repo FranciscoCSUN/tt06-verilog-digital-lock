@@ -4,7 +4,6 @@ module tt_um_top(
     input [3:0] button,
     input clk,
     input rst_n,
-    input ena,
     output [6:0] ssd,
     output [3:0] led,
     output [3:0] dig);
