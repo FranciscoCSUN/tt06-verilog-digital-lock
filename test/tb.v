@@ -22,13 +22,12 @@ module tb ();
    wire [7:0] uio_out;
    wire [7:0] uio_oe;
    
-   input [3:0] button,
-   input clk,
-   input rst_n,
-   input ena,
-   output [6:0] ssd,
-   output [3:0] led,
-   output [3:0] dig);
+   input [3:0] button;
+   input clk;
+   input rst_n;
+   output [6:0] ssd;
+   output [3:0] led;
+   output [3:0] dig;
    
    // Replace tt_um_example with your module name
    tt_um_top user_project (
