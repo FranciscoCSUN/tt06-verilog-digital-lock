@@ -14,8 +14,7 @@ project:
   top_module:  "tt_um_top"
   
   # List your project's source files here. Source files must be in ./src and you must list each source file separately, one per line:
-  source_files:        
-    - "project.v"
+  source_files:
     - "edgeDetector.v"
     - "debouncer.v"
     - "seven_segment_ctrl.v"
