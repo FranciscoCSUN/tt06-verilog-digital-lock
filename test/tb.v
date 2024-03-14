@@ -23,8 +23,6 @@ module tb ();
    wire [7:0] uio_oe;
    
    reg [3:0] button;
-   reg clk;
-   reg rst_n;
    wire [6:0] ssd;
    wire [3:0] led;
    wire [3:0] dig;
