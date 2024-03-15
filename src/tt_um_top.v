@@ -1,15 +1,28 @@
 `timescale 1ns / 1ps
 
 module tt_um_top(
-    input [3:0] button,
-    input clk,
-    input rst_n,
-    output [6:0] ssd,
-    output [3:0] led,
-    output [3:0] dig);
+    input  [7:0] ui_in,
+    output [7:0] ui_out,
+    input  [7:0] uio_in,
+    output [7:0] uio_out,
+    input  [7:0] uio_oe,
+    input  ena,
+    input  clk,
+    input  rst_n
+    );
+    
+    reg [3:0] button = ui_in[3:0];
+    wire [6:0] ssd;
+    wire [3:0] led;
+    wire [3:0] dig;
 
     wire [3:0] debounced;
     wire [3:0] signal;
+    
+    parameter VPWR;
+    parameter VGND;
+
+    assign ui_out[3:0] = led;
 
     debouncer db0(.button(button[0]), .clk(clk), .result(debounced[0]) );
     debouncer db1(.button(button[1]), .clk(clk), .result(debounced[1]) );
