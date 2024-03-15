@@ -17,8 +17,8 @@ module tt_um_top(
     wire [3:0] debounced;
     wire [3:0] signal;
     
-    parameter VPWR;
-    parameter VGND;
+    parameter VPWR = 1'b1;
+    parameter VGND = 1'b0;
 
     debouncer db0(.button(ui_in[0]), .clk(clk), .result(debounced[0]) );
     debouncer db1(.button(ui_in[1]), .clk(clk), .result(debounced[1]) );
