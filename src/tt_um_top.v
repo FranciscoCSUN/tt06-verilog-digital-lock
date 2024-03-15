@@ -2,7 +2,7 @@
 
 module tt_um_top(
     input  [7:0] ui_in,
-    output [7:0] ui_out,
+    output [7:0] uo_out,
     input  [7:0] uio_in,
     output [7:0] uio_out,
     input  [7:0] uio_oe,
@@ -32,6 +32,6 @@ module tt_um_top(
 
     digital_lock dl0(.button(signal), .clk(clk), .rstn(rst_n), .led(led));
 
-    seven_segment_ctrl ssc0(.clk(clk), .led(led), .seven_seg(ui_out[6:0]), .dig(dig));
+    seven_segment_ctrl ssc0(.clk(clk), .led(led), .seven_seg(uo_out[6:0]), .dig(dig));
 
 endmodule
