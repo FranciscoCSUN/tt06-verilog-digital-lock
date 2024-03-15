@@ -29,18 +29,18 @@ pinout:
   ui[2]: "button[2]"
   ui[3]: "button[3]"
   ui[4]: "clk"
-  ui[5]: "rstn"
+  ui[5]: "rst_n"
   ui[6]: ""
   ui[7]: ""
 
   # Outputs
-  uo[0]: "led[0]"
-  uo[1]: "led[1]"
-  uo[2]: "led[2]"
-  uo[3]: "led[3]"
-  uo[4]: "ssd"
-  uo[5]: "dig"
-  uo[6]: ""
+  uo[0]: "ssd[0]"
+  uo[1]: "ssd[1]"
+  uo[2]: "ssd[2]"
+  uo[3]: "ssd[3]"
+  uo[4]: "ssd[4]"
+  uo[5]: "ssd[5]"
+  uo[6]: "ssd[6]"
   uo[7]: ""
 
   # Bidirectional pins
