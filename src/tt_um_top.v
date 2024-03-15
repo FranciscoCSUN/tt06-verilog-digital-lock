@@ -11,8 +11,6 @@ module tt_um_top(
     input  rst_n
     );
     
-    reg [3:0] button = ui_in[3:0];
-    wire [6:0] ssd;
     wire [3:0] led;
     wire [3:0] dig;
 
@@ -22,12 +20,10 @@ module tt_um_top(
     parameter VPWR;
     parameter VGND;
 
-    assign ui_out[3:0] = led;
-
-    debouncer db0(.button(button[0]), .clk(clk), .result(debounced[0]) );
-    debouncer db1(.button(button[1]), .clk(clk), .result(debounced[1]) );
-    debouncer db2(.button(button[2]), .clk(clk), .result(debounced[2]) );
-    debouncer db3(.button(button[3]), .clk(clk), .result(debounced[3]) );
+    debouncer db0(.button(ui_in[0]), .clk(clk), .result(debounced[0]) );
+    debouncer db1(.button(ui_in[1]), .clk(clk), .result(debounced[1]) );
+    debouncer db2(.button(ui_in[2]), .clk(clk), .result(debounced[2]) );
+    debouncer db3(.button(ui_in[3]), .clk(clk), .result(debounced[3]) );
     
     edgeDetector ed0(.in(debounced[0]), .clk(clk), .out(signal[0]) );
     edgeDetector ed1(.in(debounced[1]), .clk(clk), .out(signal[1]) );
@@ -36,6 +32,6 @@ module tt_um_top(
 
     digital_lock dl0(.button(signal), .clk(clk), .rstn(rst_n), .led(led));
 
-    seven_segment_ctrl ssc0(.clk(clk), .led(led), .seven_seg(ssd), .dig(dig));
+    seven_segment_ctrl ssc0(.clk(clk), .led(led), .seven_seg(ui_out[6:0]), .dig(dig));
 
 endmodule
