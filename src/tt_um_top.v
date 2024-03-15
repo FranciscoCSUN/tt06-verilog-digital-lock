@@ -5,7 +5,7 @@ module tt_um_top(
     output [7:0] uo_out,
     input  [7:0] uio_in,
     output [7:0] uio_out,
-    input  [7:0] uio_oe,
+    output [7:0] uio_oe,
     input  ena,
     input  clk,
     input  rst_n
